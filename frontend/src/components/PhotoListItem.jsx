@@ -7,19 +7,19 @@ const PhotoListItem = (props) => {
     <div className="photo-list__item">
       <img
         className="photo-list__image"
-        src={props.imageSource}
+        src={props.value.imageSource}
         alt="image 1"
       />
       <div className="photo-list__user-details">
         <img
           className="photo-list__user-profile"
-          src={props.profile}
+          src={props.value.profile}
           alt="profile 1"
         />
         <div className="photo-list__user-info">
-          {props.username}
+          {props.value.username}
           <div className="photo-list__user-location">
-            {props.city}, &nbsp; {props.country}
+            {props.value.location.city}, &nbsp; {props.value.location.country}
           </div>
         </div>
       </div>
