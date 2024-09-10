@@ -57,11 +57,7 @@ const sampleDataForPhotoList = [
 ];
 
 const PhotoList = () => {
-  return (
-    <ul className="photo-list">
-      {/* Insert React */}
-    </ul>
-  );
+  return <ul className="photo-list">{/* Insert React */}</ul>;
 };
 
 export default PhotoList;
