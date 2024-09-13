@@ -5,10 +5,10 @@ import PhotoList from "./PhotoList";
 
 const HomeRoute = function () {
   return (
-    <div>
+    <>
       <TopNavigation />
       <PhotoList />
-    </div>
+    </>
   );
 };
 

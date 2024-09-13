@@ -5,11 +5,7 @@ import HomeRoute from "./components/HomeRoute";
 import "./App.scss";
 
 const App = () => {
-  return (
-    <>
-      <HomeRoute />
-    </>
-  );
+  return <HomeRoute />;
 };
 
 export default App;
