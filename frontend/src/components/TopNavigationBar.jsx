@@ -1,6 +1,7 @@
 import React from "react";
 import TopicList from "./TopicList";
 import FavBadge from "./FavBadge";
+import topics from "../mocks/topics";
 
 import "../styles/TopNavigationBar.scss";
 
@@ -8,7 +9,7 @@ const TopNavigation = () => {
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
-      <TopicList />
+      <TopicList topicData={topics} />
       <FavBadge />
     </div>
   );

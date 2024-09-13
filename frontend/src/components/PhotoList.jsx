@@ -57,8 +57,8 @@ const sampleDataForPhotoList = [
   },
 ];
 
-const PhotoList = () => {
-  const newArr = sampleDataForPhotoList.map((item) => {
+const PhotoList = (props) => {
+  const newArr = props.photoData.map((item) => {
     return <PhotoListItem value={item} key={item.id} />;
   });
 
