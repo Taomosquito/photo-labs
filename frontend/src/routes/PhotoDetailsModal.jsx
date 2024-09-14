@@ -8,7 +8,11 @@ const PhotoDetailsModal = (props) => {
   return (
     <div className="photo-details-modal">
       <button className="photo-details-modal__close-button">
-        <img src={closeSymbol} alt="close symbol" />
+        <img
+          src={closeSymbol}
+          onClick={props.handleModal.closeModal}
+          alt="close symbol"
+        />
       </button>
       <img src={props.value.urls.full} alt={props.value.urls.regular} />
     </div>

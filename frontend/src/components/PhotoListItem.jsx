@@ -16,7 +16,7 @@ const PhotoListItem = (props) => {
           className="photo-list__image"
           src={props.value.urls.full}
           alt={props.value.urls.regular}
-          onClick={() => props.handleModal(props.value)}
+          onClick={() => props.handleModal.createModal(props.value)}
         />
         <div className="photo-list__user-details">
           <img

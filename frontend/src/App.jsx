@@ -22,9 +22,13 @@ const App = () => {
     }
   };
 
-  const handleModal = (photoId) => {
-    console.log(photoId);
-    setModal(photoId);
+  const handleModal = {
+    createModal: function (photoId) {
+      setModal(photoId);
+    },
+    closeModal: function () {
+      setModal(false);
+    },
   };
   return (
     <>
@@ -35,7 +39,7 @@ const App = () => {
         handleFavorites={handleFavorites}
         handleModal={handleModal}
       />
-      {modal && <PhotoDetailsModal value={modal} />}
+      {modal && <PhotoDetailsModal value={modal} handleModal={handleModal} />}
     </>
   );
 };
