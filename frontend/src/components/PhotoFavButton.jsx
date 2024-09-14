@@ -3,12 +3,28 @@ import React, { useCallback, useState } from "react";
 import FavIcon from "./FavIcon";
 import "../styles/PhotoFavButton.scss";
 
-function PhotoFavButton() {
+function PhotoFavButton(props) {
   const [toggle, setToggle] = useState(false);
-  const toggleFavIcon = function () {
-    setToggle((prev) => !prev);
+
+  const addFavIcon = function () {
+    props.setFavorites((prev) => [...prev, props.indicator]);
   };
 
+  const removeFavIcon = function () {
+    props.setFavorites((prev) => prev.filter((fav) => fav !== props.indicator));
+  };
+
+  const toggleFavIcon = function () {
+    setToggle((prev) => {
+      const newToggle = !prev;
+      if (newToggle) {
+        addFavIcon();
+      } else {
+        removeFavIcon();
+      }
+      return newToggle;
+    });
+  };
   return (
     <div onClick={toggleFavIcon} className="photo-list__fav-icon">
       <div className="photo-list__fav-icon-svg">
