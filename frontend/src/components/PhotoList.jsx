@@ -12,6 +12,7 @@ const PhotoList = (props) => {
         indicator={item.id}
         handleFavorites={props.handleFavorites}
         favorites={props.favorites}
+        handleModal={props.handleModal}
       />
     );
   });

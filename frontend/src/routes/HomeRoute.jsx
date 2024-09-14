@@ -13,6 +13,7 @@ const HomeRoute = function (props) {
         photoData={props.photoData}
         handleFavorites={props.handleFavorites}
         favorites={props.favorites}
+        handleModal={props.handleModal}
       />
     </div>
   );
