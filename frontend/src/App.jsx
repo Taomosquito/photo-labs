@@ -8,11 +8,23 @@ import "./App.scss";
 
 const App = () => {
   const [favorites, setFavorites] = useState([]);
+
+  const handleFavorites = (photoId) => {
+    if (favorites.includes(photoId)) {
+      setFavorites(favorites.filter((id) => id !== photoId));
+      return;
+    } else {
+      setFavorites([...favorites, photoId]);
+      return;
+    }
+  };
+
   return (
     <HomeRoute
       photoData={photos}
       topicData={topics}
-      setFavorites={setFavorites}
+      favorites={favorites}
+      handleFavorites={handleFavorites}
     />
   );
 };

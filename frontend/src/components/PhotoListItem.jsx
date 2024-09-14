@@ -9,8 +9,8 @@ const PhotoListItem = (props) => {
       <div className="photo-list__item">
         <PhotoFavButton
           indicator={props.indicator}
-          item={props.value}
-          setFavorites={props.setFavorites}
+          handleFavorites={props.handleFavorites}
+          favorites={props.favorites}
         />
         <img
           className="photo-list__image"

@@ -10,7 +10,8 @@ const PhotoList = (props) => {
         value={item}
         key={item.id}
         indicator={item.id}
-        setFavorites={props.setFavorites}
+        handleFavorites={props.handleFavorites}
+        favorites={props.favorites}
       />
     );
   });
