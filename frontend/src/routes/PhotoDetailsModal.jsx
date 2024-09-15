@@ -14,7 +14,24 @@ const PhotoDetailsModal = (props) => {
           alt="close symbol"
         />
       </button>
-      <img src={props.value.urls.full} alt={props.value.urls.regular} />
+      <img
+        className="photo-details-modal__image"
+        src={props.value.urls.regular}
+        alt="selected photo"
+      />
+      <div className="photo-details-modal__header">
+        <img
+          className="photo-details-modal__photographer-profile"
+          src={props.value.user.profile}
+          alt={props.value.user.profile}
+        />
+        <div className="photo-details-modal__photographer-info">
+          {props.value.user.name} <br />
+        </div>
+        <div className="photo-details-modal__photographer-location">
+          {props.value.location.city}, &nbsp; {props.value.location.country}
+        </div>
+      </div>
     </div>
   );
 };
