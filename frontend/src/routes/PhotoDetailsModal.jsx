@@ -1,4 +1,5 @@
 import React from "react";
+import PhotoList from "../components/PhotoList";
 
 import "../styles/PhotoDetailsModal.scss";
 import closeSymbol from "../assets/closeSymbol.svg";
@@ -31,6 +32,14 @@ const PhotoDetailsModal = (props) => {
         <div className="photo-details-modal__photographer-location">
           {props.value.location.city}, &nbsp; {props.value.location.country}
         </div>
+      </div>
+      <div className="photo-details-modal__images">
+        <PhotoList
+          photoData={props.photoData}
+          handleFavorites={props.handleFavorites}
+          favorites={props.favorites}
+          handleModal={props.handleModal}
+        />
       </div>
     </div>
   );

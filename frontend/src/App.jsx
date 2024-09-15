@@ -39,7 +39,16 @@ const App = () => {
         handleFavorites={handleFavorites}
         handleModal={handleModal}
       />
-      {modal && <PhotoDetailsModal value={modal} handleModal={handleModal} />}
+      {modal && (
+        <PhotoDetailsModal
+          photoData={photos}
+          topicData={topics}
+          favorites={favorites}
+          handleFavorites={handleFavorites}
+          handleModal={handleModal}
+          value={modal}
+        />
+      )}
     </>
   );
 };
