@@ -5,18 +5,12 @@ import FavBadge from "./FavBadge";
 import "../styles/TopNavigationBar.scss";
 
 const TopNavigation = (props) => {
-  let isFavPhotoExist = null;
-  if (props.favorites.length > 0) {
-    isFavPhotoExist = true;
-  } else {
-    isFavPhotoExist = false;
-  }
-
+  console.log(props);
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
       <TopicList topicData={props.topicData} />
-      <FavBadge isFavPhotoExist={isFavPhotoExist} />
+      <FavBadge isFavPhotoExist={props.onLoadTopic()} />
     </div>
   );
 };

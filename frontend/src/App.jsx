@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React from "react";
 
 import HomeRoute from "./routes/HomeRoute";
 import PhotoDetailsModal from "./routes/PhotoDetailsModal";
@@ -6,47 +6,38 @@ import PhotoDetailsModal from "./routes/PhotoDetailsModal";
 import topics from "./mocks/topics";
 import photos from "./mocks/photos";
 
+import useApplicationData from "./hooks/useApplicationData";
+
 import "./App.scss";
 
 const App = () => {
-  const [favorites, setFavorites] = useState([]);
-  const [modal, setModal] = useState(null);
+  const {
+    state,
+    onPhotoSelect,
+    updateToFavPhotoIds,
+    onLoadTopic,
+    onClosePhotoDetailsModal,
+  } = useApplicationData();
 
-  const handleFavorites = (photoId) => {
-    if (favorites.includes(photoId)) {
-      setFavorites(favorites.filter((id) => id !== photoId));
-      return;
-    } else {
-      setFavorites([...favorites, photoId]);
-      return;
-    }
-  };
-
-  const handleModal = {
-    createModal: function (photoId) {
-      setModal(photoId);
-    },
-    closeModal: function () {
-      setModal(false);
-    },
-  };
   return (
     <>
       <HomeRoute
         photoData={photos}
         topicData={topics}
-        favorites={favorites}
-        handleFavorites={handleFavorites}
-        handleModal={handleModal}
+        favorites={state.favorites}
+        handleFavorites={updateToFavPhotoIds}
+        handleModal={onPhotoSelect}
+        onLoadTopic={onLoadTopic}
       />
-      {modal && (
+      {state.modal && (
         <PhotoDetailsModal
           photoData={photos}
           topicData={topics}
-          favorites={favorites}
-          handleFavorites={handleFavorites}
-          handleModal={handleModal}
-          value={modal}
+          favorites={state.favorites}
+          handleFavorites={updateToFavPhotoIds}
+          handleModal={onPhotoSelect}
+          value={state.modal}
+          onClosePhotoDetailsModal={onClosePhotoDetailsModal}
         />
       )}
     </>
