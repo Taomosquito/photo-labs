@@ -1,5 +1,6 @@
 import React from "react";
 import PhotoList from "../components/PhotoList";
+import PhotoFavButton from "../components/PhotoFavButton";
 
 import "../styles/PhotoDetailsModal.scss";
 import closeSymbol from "../assets/closeSymbol.svg";
@@ -15,6 +16,11 @@ const PhotoDetailsModal = (props) => {
           alt="close symbol"
         />
       </button>
+      <PhotoFavButton
+        indicator={props.indicator}
+        handleFavorites={props.handleFavorites}
+        favorites={props.favorites}
+      />
       <img
         className="photo-details-modal__image"
         src={props.value.urls.regular}
