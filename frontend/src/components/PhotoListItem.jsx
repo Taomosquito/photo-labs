@@ -8,15 +8,15 @@ const PhotoListItem = (props) => {
     <>
       <div className="photo-list__item">
         <PhotoFavButton
-          indicator={props.indicator}
-          handleFavorites={props.handleFavorites}
-          favorites={props.favorites}
+          itemID={props.itemID}
+          updateFavPhotoData={props.updateFavPhotoData}
+          photoFavorites={props.photoFavorites}
         />
         <img
           className="photo-list__image"
           src={props.value.urls.full}
           alt={props.value.urls.regular}
-          onClick={() => props.handleModal(props.value)}
+          onClick={() => props.openSelectedModal(props.value)}
         />
         <div className="photo-list__user-details">
           <img

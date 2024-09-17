@@ -13,10 +13,11 @@ import "./App.scss";
 const App = () => {
   const {
     state,
-    onPhotoSelect,
-    updateToFavPhotoIds,
-    onLoadTopic,
-    onClosePhotoDetailsModal,
+    updateFavPhotoData,
+    SET_PHOTO_DATA,
+    SET_TOPIC_DATA,
+    openSelectedModal,
+    closeModal,
   } = useApplicationData();
 
   return (
@@ -24,20 +25,20 @@ const App = () => {
       <HomeRoute
         photoData={photos}
         topicData={topics}
-        favorites={state.favorites}
-        handleFavorites={updateToFavPhotoIds}
-        handleModal={onPhotoSelect}
-        onLoadTopic={onLoadTopic}
+        updateFavPhotoData={updateFavPhotoData}
+        openSelectedModal={openSelectedModal}
+        closeModal={closeModal}
+        photoFavorites={state.photoFavorites}
       />
       {state.modal && (
         <PhotoDetailsModal
           photoData={photos}
           topicData={topics}
-          favorites={state.favorites}
-          handleFavorites={updateToFavPhotoIds}
-          handleModal={onPhotoSelect}
+          openSelectedModal={openSelectedModal}
+          closeModal={closeModal}
           value={state.modal}
-          onClosePhotoDetailsModal={onClosePhotoDetailsModal}
+          photoFavorites={state.photoFavorites}
+          updateFavPhotoData={updateFavPhotoData}
         />
       )}
     </>
