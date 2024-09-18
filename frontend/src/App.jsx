@@ -11,10 +11,9 @@ const App = () => {
   const {
     state,
     updateFavPhotoData,
-    SET_PHOTO_DATA,
-    SET_TOPIC_DATA,
     openSelectedModal,
     closeModal,
+    fetchPhotoByTopicDataId,
   } = useApplicationData();
 
   return (
@@ -26,6 +25,7 @@ const App = () => {
         openSelectedModal={openSelectedModal}
         closeModal={closeModal}
         photoFavorites={state.photoFavorites}
+        fetchPhotoByTopicDataId={fetchPhotoByTopicDataId}
       />
       {state.modal && (
         <PhotoDetailsModal

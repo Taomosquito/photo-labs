@@ -13,6 +13,7 @@ const HomeRoute = function (props) {
       <TopNavigation
         topicData={props.topicData}
         isFavPhotoExist={isFavPhotoExist}
+        fetchPhotoByTopicDataId={props.fetchPhotoByTopicDataId}
       />
       <PhotoList
         photoData={props.photoData}

@@ -67,14 +67,20 @@ const useApplicationData = function () {
   useEffect(() => {
     fetch("/api/photos")
       .then((res) => res.json())
-      .then((data) => SET_PHOTO_DATA(data));
+      .then((data) => setPhotoData(data));
   }, []);
 
   useEffect(() => {
     fetch("/api/topics")
       .then((res) => res.json())
-      .then((data) => SET_TOPIC_DATA(data));
+      .then((data) => setTopicData(data));
   }, []);
+
+  const fetchPhotoByTopicDataId = function (id) {
+    fetch(`/api/topics/photos/${id}`)
+      .then((res) => res.json())
+      .then((data) => setPhotoData(data));
+  };
 
   const updateFavPhotoData = function (favoriteID) {
     if (state.photoFavorites.includes(favoriteID)) {
@@ -83,10 +89,10 @@ const useApplicationData = function () {
     return dispatch({ type: ACTIONS.FAV_PHOTO_ADDED, id: favoriteID });
   };
 
-  const SET_PHOTO_DATA = function (photoData) {
+  const setPhotoData = function (photoData) {
     return dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: photoData });
   };
-  const SET_TOPIC_DATA = function (topicData) {
+  const setTopicData = function (topicData) {
     return dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: topicData });
   };
   const openSelectedModal = function (photoData) {
@@ -98,9 +104,8 @@ const useApplicationData = function () {
 
   return {
     state,
+    fetchPhotoByTopicDataId,
     updateFavPhotoData,
-    SET_PHOTO_DATA,
-    SET_TOPIC_DATA,
     openSelectedModal,
     closeModal,
   };
