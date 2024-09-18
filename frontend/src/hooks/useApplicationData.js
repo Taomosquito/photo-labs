@@ -1,4 +1,4 @@
-import { React, useReducer } from "react";
+import { React, useReducer, useEffect } from "react";
 
 export const ACTIONS = {
   FAV_PHOTO_ADDED: "FAV_PHOTO_ADDED",
@@ -16,13 +16,13 @@ const useApplicationData = function () {
       case "SET_PHOTO_DATA":
         return {
           ...state,
-          photosData: action.payload,
+          photoData: action.payload,
         };
       //Dispatch call to set Topic data for the home page
       case "SET_TOPIC_DATA":
         return {
           ...state,
-          topicsData: action.payload,
+          topicData: action.payload,
         };
       // Dispatch to add photo to Favorites
       case "FAV_PHOTO_ADDED":
@@ -59,10 +59,23 @@ const useApplicationData = function () {
   const initialState = {
     photoFavorites: [],
     modal: null,
-    photosData: [],
-    topicsData: [],
+    photoData: [],
+    topicData: [],
   };
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    fetch("/api/photos")
+      .then((res) => res.json())
+      .then((data) => SET_PHOTO_DATA(data));
+  }, []);
+
+  useEffect(() => {
+    fetch("/api/topics")
+      .then((res) => res.json())
+      .then((data) => SET_TOPIC_DATA(data));
+  }, []);
+
   const updateFavPhotoData = function (favoriteID) {
     if (state.photoFavorites.includes(favoriteID)) {
       return dispatch({ type: ACTIONS.FAV_PHOTO_REMOVED, id: favoriteID });
@@ -70,11 +83,11 @@ const useApplicationData = function () {
     return dispatch({ type: ACTIONS.FAV_PHOTO_ADDED, id: favoriteID });
   };
 
-  const SET_PHOTO_DATA = function (photosData) {
-    return dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: photosData });
+  const SET_PHOTO_DATA = function (photoData) {
+    return dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: photoData });
   };
-  const SET_TOPIC_DATA = function (topicsData) {
-    return dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: topicsData });
+  const SET_TOPIC_DATA = function (topicData) {
+    return dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: topicData });
   };
   const openSelectedModal = function (photoData) {
     return dispatch({ type: ACTIONS.OPEN_MODAL, payload: photoData });
@@ -82,6 +95,7 @@ const useApplicationData = function () {
   const closeModal = function () {
     return dispatch({ type: ACTIONS.CLOSE_MODAL });
   };
+
   return {
     state,
     updateFavPhotoData,

@@ -3,9 +3,6 @@ import React from "react";
 import HomeRoute from "./routes/HomeRoute";
 import PhotoDetailsModal from "./routes/PhotoDetailsModal";
 
-import topics from "./mocks/topics";
-import photos from "./mocks/photos";
-
 import useApplicationData from "./hooks/useApplicationData";
 
 import "./App.scss";
@@ -23,8 +20,8 @@ const App = () => {
   return (
     <>
       <HomeRoute
-        photoData={photos}
-        topicData={topics}
+        photoData={state.photoData}
+        topicData={state.topicData}
         updateFavPhotoData={updateFavPhotoData}
         openSelectedModal={openSelectedModal}
         closeModal={closeModal}
@@ -32,8 +29,8 @@ const App = () => {
       />
       {state.modal && (
         <PhotoDetailsModal
-          photoData={photos}
-          topicData={topics}
+          photoData={state.photoData}
+          topicData={state.topicData}
           openSelectedModal={openSelectedModal}
           closeModal={closeModal}
           value={state.modal}
