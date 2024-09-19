@@ -28,7 +28,7 @@ npm start
 
 ##### people topic
 
-<img src="./readme_photos/photolabs_People.png" alt="people topic screenshot">
+![people topic screenshot] (./readme_photos/photolabs_People.png)
 
 ##### nature topic
 
