@@ -28,7 +28,7 @@ npm start
 
 ##### people topic
 
-![people topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs%20_People.png)
+https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs%20_People.png
 
 ##### nature topic
 
