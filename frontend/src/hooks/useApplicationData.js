@@ -12,25 +12,21 @@ export const ACTIONS = {
 const useApplicationData = function () {
   const reducer = function (state, action) {
     switch (action.type) {
-      // Dispatch call to set photo data for the home page
       case "SET_PHOTO_DATA":
         return {
           ...state,
           photoData: action.payload,
         };
-      //Dispatch call to set Topic data for the home page
       case "SET_TOPIC_DATA":
         return {
           ...state,
           topicData: action.payload,
         };
-      // Dispatch to add photo to Favorites
       case "FAV_PHOTO_ADDED":
         return {
           ...state,
           photoFavorites: [...state.photoFavorites, action.id],
         };
-      // Dispatch to remove photo from Favorites
       case "FAV_PHOTO_REMOVED":
         return {
           ...state,
@@ -38,13 +34,11 @@ const useApplicationData = function () {
             (photoID) => photoID !== action.id
           ),
         };
-      // Dispatch to select photo to enlarge and show in modal with similar photos
       case "OPEN_MODAL":
         return {
           ...state,
           modal: action.payload,
         };
-      // Dispatch to close modal
       case "CLOSE_MODAL":
         return {
           ...state,
