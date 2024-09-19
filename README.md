@@ -28,20 +28,20 @@ npm start
 
 ##### people topic
 
-![people topic screenshot] (./readme_photos/photolabs_People.png)
+![people topic screenshot](./readme_photos/photolabs_People.png)
 
 ##### nature topic
 
-<img src="./readme_photos/photolabs_nature.png" alt="nature topic screenshot">
+![nature topic screenshot](./readme_photos/photolabs_nature.png)
 
 ##### animals topic
 
-<img src="./readme_photos/photolabs_animals.png" alt="animals topic screenshot">
+![animals topic screenshot](./readme_photos/photolabs_animals.png)
 
 ##### fashion topic
 
-<img src="./readme_photos/photolabs_fashion.png" alt="fashion topic screenshot">
+![fashion topic screenshot](./readme_photos/photolabs_fashion.png)
 
 ##### travel topic
 
-<img src="./readme_photos/photolabs_travel.png" alt="travel topic screenshot">
+![travel topic screenshot](./readme_photos/photolabs_travel.png)
