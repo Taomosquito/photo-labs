@@ -28,20 +28,20 @@ npm start
 
 ##### people topic
 
-![people topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs_People.png)
+![people topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs%20_People.png)
 
 ##### nature topic
 
-![nature topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs_nature.png)
+![nature topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs%20_nature.png)
 
 ##### animals topic
 
-![animals topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs_animals.png)
+![animals topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs%20_animals.png)
 
 ##### fashion topic
 
-![fashion topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs_fashion.png)
+![fashion topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs%20_fashion.png)
 
 ##### travel topic
 
-![travel topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs_travel.png)
+![travel topic screenshot](https://github.com/Taomosquito/photo-labs/tree/main/readme_photos/photolabs%20_travel.png)
